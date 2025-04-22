@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación 15 Años - Ashley Bastidas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="estilo.css"> <!-- Asegúrate de tener este archivo -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+	<style>
+		.video-container {
+            margin-top: 20px;
+			display: flex;
+			justify-content: center; /* Centra el video horizontalmente */
+        }
+        video {
+            width: 80%;
+            max-width: 600px;
+			border: 3px solid #ab9047;
+			border-radius: 10px;
+			box-shadow: 0px 4px 10px rgba(171, 144, 71, 0.6);
+        }
+		.countdown-container {
+			position: relative;
+			text-align: center;
+		}
+
+		/* Estilo para el título "Faltan" */
+		.faltan-title {
+			font-size: 150px;
+			font-weight: bold;
+			font-family: "Brush Script MT", cursive; /* Fuente cursiva elegante */
+			color: #ab9047; /* Color dorado */
+			text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5), 
+						 -3px -3px 5px rgba(255, 255, 255, 0.5); /* Efecto de relieve */
+			margin-bottom: -20px; /* Para acercarlo al contador */
+		}
+
+		.countdown {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 15px;
+			font-family: Arial, sans-serif;
+			font-size: 24px;
+			background-color: #f5f5dc;
+			padding: 10px;
+			border-radius: 10px;
+		}
+		#countdown {
+            font-size: 2.5em; /* Tamaño más grande */
+            font-weight: bold;
+            color: #BDD395;
+        }
+		
+		#countdown .seconds {
+            color: #8AAC66; /* Color especial para los segundos */
+        }
+		@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+				
+		.recepcion-container {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			max-width: 400px; /* Ajusta el ancho según necesidad */
+			background: transparent; /* Hace el fondo invisible */
+			border: none; /* Elimina cualquier borde */
+			box-shadow: none; /* Elimina cualquier sombra */
+			padding: 0; /* Ajusta el espacio interior si es necesario */
+			margin: 0 auto; /* Centra el contenedor si es necesario */
+			background-color: #DAE4C7; /* Ajusta el color de fondo */
+			border-radius: 15px;
+			text-align: center;
+		}
+
+		.copas {
+			position: absolute;
+			left: 10px;
+			top: 10px;
+			width: 80px; /* Ajusta el tamaño de las copas */
+		}
+
+		.titulo-recepcion {
+			font-family: 'Great Vibes', cursive; /* Fuente elegante */
+			font-size: 56px;
+			color: #ab9047; /* Color dorado */
+			text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+			margin-top: 60px;
+		}
+
+		.ubicacion {
+			font-family: 'Georgia', serif;
+			font-size: 18px;
+			color: #81a969;
+			margin-top: -10px;
+			font-style: italic;
+		}
+
+		.mapa-btn {
+			display: inline-block;
+			margin-top: 10px;
+			padding: 10px 20px;
+			background: linear-gradient(to bottom, #FFD700, #D4AF37);
+			color: #5A3E10;
+			font-size: 16px;
+			font-weight: bold;
+			border-radius: 25px;
+			text-decoration: none;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+			transition: all 0.3s ease-in-out;
+		}
+
+		.mapa-btn:hover {
+			background: linear-gradient(to bottom, #D4AF37, #B8860B);
+			transform: scale(1.1);
+		}	
+		
+		/* Contenedor de la invitación */
+		.invitation-container {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			max-width: 500px; /* Ajusta el ancho según necesidad */
+			background: transparent; /* Hace el fondo invisible */
+			border: none; /* Elimina cualquier borde */
+			box-shadow: none; /* Elimina cualquier sombra */
+			padding: 0; /* Ajusta el espacio interior si es necesario */
+			margin: 0 auto; /* Centra el contenedor si es necesario */
+			background-color: #DAE4C7; /* Ajusta el color de fondo */
+			border-radius: 15px;
+			text-align: center;
+		}
+
+		/* Texto de la invitación */
+		.invitation-text p {
+			font-size: 35px;
+			color: #333; /* Color oscuro para mejor legibilidad */
+			line-height: 1.6;
+			text-shadow: 0 0 10px #ab9047, 0 0 20px #d4af37, 0 0 30px #f1c27d;
+			animation: glow 1.5s infinite alternate;
+		}
+		/* Animación de brillo */
+			@keyframes glow {
+			0% { text-shadow: 0 0 10px #ab9047; }
+			100% { text-shadow: 0 0 20px #d4af37; }
+		}
+		
+		.lluvia-container {
+			text-align: right; /* Alineación total a la derecha */
+			padding-right: 30px; /* Ajuste de espacio desde el borde derecho */
+			margin-top: 50px; /* Ajuste de espacio superior */
+		}
+
+		.lluvia-title {
+			font-size: 150px;
+			font-weight: bold;
+			font-family: "Brush Script MT", cursive; /* Fuente cursiva elegante */
+			color: #ab9047; /* Color dorado */
+			text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5), 
+						 -3px -3px 5px rgba(255, 255, 255, 0.5); /* Efecto de relieve */
+			margin-bottom: -20px; /* Para acercarlo al contador */
+			text-align: right; /* Asegura que el texto dentro esté alineado */
+			display: block; /* Permite que el text-align funcione correctamente */
+			opacity: 0; /* Oculta el título inicialmente */
+			transform: scale(0); /* Hace que inicie invisible y pequeño */
+			animation: explosion 0.8s ease-out forwards;
+		}
+
+		/* Forzar salto de línea entre "Lluvia" y "de sobres" */
+		.lluvia-title span {
+			display: block;
+		}
+
+		/* Animación de explosión */
+		@keyframes explosion {
+			0% {
+				opacity: 0;
+				transform: scale(0);
+			}
+			50% {
+				opacity: 1;
+				transform: scale(1.5);
+			}
+			100% {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+		/* Contenedor de decoraciones */
+		.decoracion {
+			position: fixed; /* Fijar las decoraciones en la pantalla */
+			top: 0;
+			height: 100vh; /* Ocupar toda la altura de la pantalla */
+			z-index: 1; /* Asegurar que estén detrás del contenido */
+		}
+
+		/* Flores verdes (izquierda) */
+		.izquierda {
+			left: 0;
+			width: 150px; /* Ancho de las flores */
+		}
+
+		/* Princesa (derecha) */
+		.derecha {
+			right: 0;
+			width: 200px; /* Ancho de la princesa */
+		}
+
+		/* Imágenes dentro de las decoraciones */
+		.decoracion img {
+			width: 100%; /* Ajustar al 100% del contenedor */
+			height: 100%; /* Ocupar toda la altura */
+			object-fit: cover; /* Asegurar que la imagen cubra el espacio */
+		}
+
+		/* Contenido principal */
+		.contenido {
+			position: relative;
+			z-index: 2; /* Asegurar que el contenido esté por encima de las decoraciones */
+			padding: 20px;
+			max-width: 800px;
+			margin: 0 auto; /* Centrar el contenido */
+			background-color: white; /* Fondo del contenido */
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para resaltar el contenido */
+		}
+		/* Animación para las flores */
+		@keyframes moverFlores {
+			0% { transform: translateY(0); }
+			50% { transform: translateY(-10px); }
+			100% { transform: translateY(0); }
+		}
+
+		.izquierda img {
+			animation: moverFlores 3s infinite; /* Animación lenta */
+		}
+
+		/* Animación para la princesa */
+		@keyframes moverPrincesa {
+			0% { transform: translateY(0); }
+			50% { transform: translateY(10px); }
+			100% { transform: translateY(0); }
+		}
+
+		.derecha img {
+			animation: moverPrincesa 4s infinite; /* Animación lenta */
+		}
+	</style>   
+</head>
+<body>	
+    <div class="container">
+		<div class="video-container">
+            <video id="video" controls>
+                <source src="audio/MISQUINCE....mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
+		
+		<div class="countdown-container">
+			<h1 class="faltan-title">Faltan</h1>
+			<p id="countdown"></p>
+		</div>
+		
+		<div class="img-container">
+			<img src="img/5.png" alt="ASHLEY">
+		</div></p>
+			<img src="img/coro.png" alt="ASHLEY">
+		
+        <div class="invitation-container">
+			<div class="invitation-text">
+				<p>Quince años de risas, sueños y aprendizajes merecen ser celebrados. Los momentos más felices de la vida se vuelven más maravillosos cuando tenemos la suerte de compartirlos con nuestra familia y amigos más queridos.</p>
+				<p>Tú eres parte de esa magia, por eso quiero que me acompañes a celebrar mis 15 años y hacer de este día un recuerdo inolvidable.</p>
+			</div>
+		</div>
+			<div class="invitation-text">
+				<img src="img/logooo3.gif" alt="ASHLEY">
+			</div>
+			
+			<div id="contenedor">
+				<img src="img/2605_2.gif" alt="ASHLEY">
+				<div class="recepcion-container">
+					<a href="https://calendar.app.google/NA2Wci5HSePodpig9" target="_blank" class="btn mapa-btn">Guardar Fecha</a>
+				</div>
+			</div>
+			<p>
+		<div>	
+		<div class="img-container">
+			<img src="img/12345678.gif" alt="ASHLEY">
+		</div>
+		<div class="recepcion-container">
+			<a href="https://www.google.com/maps?q=Carrera+17A+23-21,+Barrio+Centenario,+Pasto" target="_blank" class="btn mapa-btn">Cómo llegar</a>
+		</div>
+		<p>
+			<img src="img/2.gif" alt="ASHLEY">
+			<img src="img/ves2.gif" alt="ASHLEY">
+		<div class="img-container">
+			<img src="img/LLUVIA.gif" alt="ASHLEY">
+		</div>
+		<div class="invitation-container">
+			<div class="invitation-text">
+				<p>¡Queremos preparar todos los detalles! Tu compañia es mi mejor regalo, por favor hazme saber si contare con tu presencia.</p>
+			</div>
+		</div>
+		<div class="recepcion-container">
+			<!-- Botón de Confirmación -->
+			<a href="https://wa.link/jg9d83" target="_blank" class="btn mapa-btn">Confirmar Asistencia</a>
+		</div>
+		<p>
+			<!-- Contenedor para las flores verdes (izquierda) -->
+		<div class="decoracion izquierda">
+			<img src="img/flor11.png" alt="Flores verdes">
+		</div>
+
+		<!-- Contenedor para la princesa (derecha) -->
+		<div class="decoracion derecha">
+			<img src="img/flor12.png" alt="Princesa">
+		</div>
+        <p>    
+			<!-- Reproductor de audio -->
+			<audio id="m" style="display:none" src="audio/Evangeline.mp3" controls>  
+			  Tu navegador no soporta el elemento <code>audio</code>.  
+			</audio>  
+
+			<button style="background-color:#ffffff; border-radius:50%; padding:15px; color:#000000; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;" id="boton">►</button>
+
+			<script type="text/javascript">
+			 var v = document.getElementsByTagName("audio")[0];
+			 var sound = false;
+			 
+			 var boton = document.getElementById("boton");
+			 boton.addEventListener("click", function(){
+				if (!sound) {
+					v.play();
+					this.innerHTML = "⏸";
+					sound = true;
+				} else {
+					v.pause();
+					this.innerHTML = "►";
+					sound = false;
+				}
+			 });
+			 
+			 
+			</script>
+			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		</div>
+        <div class="footer">
+            <p>¡Te espero con mucha ilusión para vivir juntos esta noche mágica!</p>
+        </div>
+    </div>
+
+    <button id="scrollToTopBtn" title="Volver arriba">↑</button>
+	
+	<button id="openModalBtn" style="display: block; margin: 20px auto; background-color: #DAE4C7; border-radius: 15px;">
+		Mis Quince
+	</button>
+
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<span id="closeModalBtn">&times;</span>
+			<p id="personalizedMessage"></p>
+		</div>
+	</div>
+
+	<script>
+		// Esperar que el DOM esté listo antes de ejecutar el script
+		document.addEventListener("DOMContentLoaded", function () {
+			function getQueryParam(param) {
+				const urlParams = new URLSearchParams(window.location.search);
+				return urlParams.get(param);
+			}
+
+			const nombreInvitado = getQueryParam("invitado") || "Querido invitado";
+
+			const mensaje = `
+				<div style="font-size: 20px; line-height: 1.6;">
+					¡Hola ${nombreInvitado}! 🎉<br><br>
+					La vida está hecha de momentos que marcan nuestra historia, y hay instantes tan especiales que merecen ser celebrados con amor y alegría.<br><br>
+					Han sido 15 años de risas, aprendizajes, sueños y crecimiento, un camino recorrido con la luz de quienes siempre han estado a tu lado.<br><br>
+					Hoy, con el corazón lleno de gratitud, queremos recordarte que muy pronto viviremos juntos un día inolvidable. 💖
+				</div>
+			`;
+
+			// Mostrar mensaje personalizado
+			document.getElementById("personalizedMessage").innerHTML = mensaje;
+
+			// Código para abrir y cerrar el modal
+			document.getElementById("openModalBtn").addEventListener("click", function() {
+				document.getElementById("myModal").style.display = "block";
+			});
+
+			document.getElementById("closeModalBtn").addEventListener("click", function() {
+				document.getElementById("myModal").style.display = "none";
+			});
+
+			// Cerrar el modal si se hace clic fuera de él
+			window.onclick = function(event) {
+				if (event.target === document.getElementById("myModal")) {
+					document.getElementById("myModal").style.display = "none";
+				}
+			};
+		});
+	</script>
+
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const countdown = document.getElementById('countdown'); 
+        const eventDate = new Date('June 15, 2025 19:00:00').getTime();
+
+        const interval = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdown.innerHTML = `
+                ${days} días, ${hours} horas, ${minutes} minutos y 
+                <span class="seconds">${seconds} segundos</span>
+            `;
+
+            if (distance < 0) {
+                clearInterval(interval);
+                countdown.innerHTML = '¡El gran día ha llegado!';
+            }
+        }, 1000);
+
+        
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 100) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        });
+
+        scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+        const modal = document.getElementById("myModal");
+        const openModalBtn = document.getElementById("openModalBtn");
+        const closeModalBtn = document.getElementById("closeModalBtn");
+
+        openModalBtn.addEventListener("click", () => {
+            modal.style.display = "block";
+        });
+
+        closeModalBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener("click", (event) => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

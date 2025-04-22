@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap');
+		
+		
+		body {
+            font-family: 'Parisienne', cursive;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://i.pinimg.com/originals/9b/98/38/9b9838ff8823058574ff0739e431b932.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #3e2723;
+        }
+		
+		html, body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			background: radial-gradient(circle, rgba(171, 144, 71, 0.3) 10%, transparent 70%);
+			background-color: #DAE4C7; /* Un fondo oscuro elegante */
+			animation: shimmer 5s infinite alternate;
+		}
+		
+		
+        .container {
+            text-align: center;
+            padding: 20px;
+			background-color: #DAE4C7;
+			min-height: 100vh;
+			border: 3px solid #ab9047; /* Borde dorado */
+			border-radius: 15px; /* Bordes redondeados */
+			box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra elegante */
+			animation: borderGlow 2s infinite alternate;
+			
+        }
+		/* Animación de brillo en el borde */
+			@keyframes borderGlow {
+			0% { box-shadow: 0 0 5px #ab9047; }
+			100% { box-shadow: 0 0 20px #d4af37; }
+		}
+		
+        .header {
+		
+			text-align: center;
+			font-size: 24px;
+			font-weight: bold;
+			color: #FFD700; /* Color dorado */
+			line-height: 1.2; /* Reduce la separación entre renglones */
+			margin: 5px 0; /* Reduce el margen vertical */
+            color: #FFFFFF;
+            padding: 15px 0;
+            font-size: 3em;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+		.header p {
+			margin: 2px 0; /* Ajusta el espacio entre líneas */
+		}
+        .content {
+            background-color: #F8FDCD;
+            border-radius: 20px;
+            padding: 25px;
+            margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-in-out;
+			text-align: center;
+        }
+        .invitation-text {
+            font-size: 1.8em;
+            color: #3e2723;
+        }
+        .date-time, .location {
+            font-size: 1.5em;
+            color: #769A8C;
+            margin-top: 15px;
+        }
+        .footer {
+            margin-top: 30px;
+            font-style: italic;
+            color: #6d6d6d;
+        }
+		
+		
+        .img-container img {
+            border-radius: 20px;
+            margin-top: 15px;
+			width: 100%; /* Ocupa el 100% del ancho disponible */
+            max-width: 1366px; /* Máximo ancho del viewport */
+            margin: 0 auto; /* Centrar el contenedor */
+            overflow: hidden; /* Evitar desbordamiento */
+        }
+		
+		/* Estilos para las imágenes */
+        .img-container img {
+            width: 100%; /* Ajustar al 100% del contenedor */
+            height: auto; /* Mantener la proporción de la imagen */
+            display: block; /* Eliminar espacio adicional debajo de la imagen */
+        }
+		
+        .countdown {
+            font-size: 1.8em;
+            color: #BDD395;
+            margin-top: 20px;
+        }
+        .music {
+            margin-top: 20px;
+        }
+        .confirmacion {
+            margin-top: 20px;
+        }
+        .confirmar-btn, .mapa-btn {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 1.3em;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+		.confirmar-btn {
+            background-color: #5DAE92;
+            color: #FFFFFF;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .confirmar-btn:hover {
+            background-color: #769A8C;
+        }
+
+        .mapa-btn {
+            background-color: #FFD700;
+            color: #3e2723;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .mapa-btn:hover {
+            background-color: #F4C430;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+		
+		.parallax {
+            background-image: url('https://i.pinimg.com/originals/9b/98/38/9b9838ff8823058574ff0739e431b932.jpg');
+            min-height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 40px;
+            right: 20px;
+            z-index: 99;
+            font-size: 25px;
+            border: none;
+            outline: none;
+            background-color: #8AAC66;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        #scrollToTopBtn:hover {
+            background-color: #769A8C;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            background-color: #F8FDCD;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        #closeModalBtn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #closeModalBtn:hover {
+            color: #000;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @media (max-width: 768px) {
+            .header {
+                font-size: 2em;
+            }
+            .invitation-text {
+                font-size: 1.2em;
+            }
+            .date-time, .location {
+                font-size: 1em;
+        }
+		@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+
+
+
+		.invitation-container {
+				display: flex;
+				justify-content: center; /* Centra el contenido dentro del contenedor */
+				align-items: center;
+				width: 90%; /* Ancho máximo */
+				max-width: 800px; /* Máximo ancho */
+			}
+
+			.invitation-text {
+				font-family: 'Italianno', cursive; /* Fuente elegante */
+				font-size: 38px; /* Tamaño grande */
+				color: #4A290F; /* Marrón oscuro para elegancia */
+				text-align: center; /* Centra el texto */
+				line-height: 1.5; /* Espaciado entre líneas */
+				width: 100%; /* Ocupa todo el ancho disponible */
+				background-color: #DAE4C7; /* Fondo en tono pastel */
+				padding: 30px; /* Espaciado interno */
+				border-radius: 15px; /* Bordes redondeados */
+				box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Sombra elegante */
+			}
+		}
+		
