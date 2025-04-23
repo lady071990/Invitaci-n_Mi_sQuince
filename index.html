@@ -257,6 +257,22 @@
 		.derecha img {
 			animation: moverPrincesa 4s infinite; /* Animación lenta */
 		}
+
+		/* Diseño responsive */
+		    @media (max-width: 768px) {
+		      nav {
+		        flex-direction: column;
+		      }
+		
+		      main {
+		        flex-direction: column;
+		        padding: 1rem;
+		      }
+		
+		      .contenido, .sidebar {
+		        flex: 1 1 100%;
+		      }
+		
 	</style>   
 </head>
 <body>	
